@@ -169,7 +169,7 @@ make bonus
 ./push_swap 4 2 7 1 5
 
 # Using random numbers (bash example)
-ARG=```(shuf -i 0-100 -n 10 | tr "\n" " "); ./push_swap ```ARG
+ARG=$(shuf -i 0-100 -n 10 | tr "\n" " "); ./push_swap $ARG
 ```
 
 The program will output the sequence of operations needed to sort the stack.
@@ -177,7 +177,7 @@ The program will output the sequence of operations needed to sort the stack.
 #### **Checker Usage (Bonus)**
 ```
 # Test if sorting works correctly with push_swap output
-ARG="4 2 7 1 5"; ./push_swap ```ARG | ./checker_bonus/checker ```ARG
+ARG="4 2 7 1 5"; ./push_swap $ARG | ./checker_bonus/checker $ARG
 OK  # If sorting was successful
 
 # Test with specific sequence of operations
@@ -188,7 +188,7 @@ rra
 OK  # If sorting was successful
 
 # Testing with large random datasets
-ARG=```(shuf -i 0-999 -n 100 | tr "\n" " "); ./push_swap ```ARG | ./checker_bonus/checker ```ARG
+ARG=$(shuf -i 0-999 -n 100 | tr "\n" " "); ./push_swap $ARG | ./checker_bonus/checker $ARG
 OK
 
 # Testing with edge cases
